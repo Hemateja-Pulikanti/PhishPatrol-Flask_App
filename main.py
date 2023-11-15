@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import pandas as pd
 import numpy as np
 from xgboost import XGBClassifier
+import os
 import re
 import requests
 import time
@@ -67,5 +68,6 @@ def index():
     return render_template('main.html', result=result)
 
 
-if __name__ == '__main__':
-    app.run(debug=False, host = '0.0.0.0', port=5000)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
