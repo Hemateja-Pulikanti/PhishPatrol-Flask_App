@@ -68,4 +68,4 @@ def index():
     return render_template('main.html', result=result)
     
 if __name__ == '__main__':
-    app.run(debug=False, host = '0.0.0.0')
+    app.run()
